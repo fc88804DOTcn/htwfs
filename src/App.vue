@@ -1,42 +1,79 @@
 <template>
-	<!--使用 router-link 组件进行导航 -->
-	<!--通过传递 `to` 来指定链接 -->
-	<!--`<router-link>` 将呈现一个带有正确 `href` 属性的 `<a>` 标签-->
-	<router-link to="/">Go to Home</router-link>
-
+	<transition
+		enter-active-class="animate__animated animate__bounceInUp"
+		leave-active-class="animate__animated animate__bounceOutUp"
+	>
+		<Navigation v-if="panelSwitch.top" class="navigation"></Navigation>
+	</transition>
 	<!-- 路由出口 -->
 	<!-- 路由匹配到的组件将渲染在这里 -->
 	<router-view class="router-view"></router-view>
 </template>
 
 <script>
+import Emitter from 'tiny-emitter';
+import { useStore } from 'vuex';
 import { computed, defineComponent, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue';
+import Navigation from './components/index/navigation.vue';
 export default defineComponent({
 	name: '',
 	props: {},
-	components: {},
-	setup(props, context) {}
+	components: { Navigation },
+	setup(props, context) {
+		const store = useStore();
+		const panelSwitch = computed(() => store.getters.indexPanelSwitch);
+
+		// 全局事件处理
+		const emitter = new Emitter();
+		onMounted(() => {
+			document.addEventListener('keydown', () => {
+				if (event.keyCode === 69) {
+					// 此处应触发控制器开关取反事件
+					emitter.emit('indexPanelSwitchReverse');
+				}
+			});
+			emitter.on('indexPanelSwitchReverse', () => {
+				store.commit('indexPanelSwitchReverse');
+			});
+		});
+
+		return {
+			panelSwitch
+		};
+	}
 });
 </script>
 
 <style lang="less">
 html,
 body,
-#app,
-.router-view {
-	width: 100vw;
-	height: 100vh;
+#app {
+	width: 100%;
+	height: 100%;
 	overflow: hidden;
 }
 
-&#app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
+#app {
+	box-sizing: border-box;
+	padding: 15px;
+	background: gainsboro;
+
+	.navigation {
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 15px;
+		padding-bottom: 0px;
+		width: 100%;
+		box-sizing: border-box;
+		display: flex;
+		justify-content: center;
+		background: gainsboro;
+	}
+
 	.router-view {
-		position: fixed;
+		height: 100%;
+		background: grey;
 	}
 }
 </style>

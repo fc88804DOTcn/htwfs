@@ -1,3 +1,5 @@
 export default {
-	obj: undefined
+	obj: {
+		name: "聚恒博联"
+	}
 }
