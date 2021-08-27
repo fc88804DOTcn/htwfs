@@ -1,13 +1,17 @@
 <template>
 	<transition
-		enter-active-class="animate__animated animate__bounceInUp"
+		enter-active-class="animate__animated animate__bounceInDown"
 		leave-active-class="animate__animated animate__bounceOutUp"
 	>
 		<Navigation v-if="panelSwitch.top" class="navigation"></Navigation>
 	</transition>
 	<!-- 路由出口 -->
 	<!-- 路由匹配到的组件将渲染在这里 -->
-	<router-view class="router-view"></router-view>
+	<router-view class="router-view" v-slot="{ Component }">
+		<transition name="fade">
+		    <component :is="Component" />
+		  </transition>
+	</router-view>
 </template>
 
 <script>
