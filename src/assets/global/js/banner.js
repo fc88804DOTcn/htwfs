@@ -1,3 +1,3 @@
 export default ()=> {
-	console.log("banner")
+	// console.log("banner")
 }

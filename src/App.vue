@@ -1,7 +1,7 @@
 <template>
 	<transition
-		enter-active-class="animate__animated animate__bounceInDown"
-		leave-active-class="animate__animated animate__bounceOutUp"
+		enter-active-class="animate__animated animate__slideInDown"
+		leave-active-class="animate__animated animate__slideOutUp"
 	>
 		<Navigation v-if="panelSwitch.top" class="navigation"></Navigation>
 	</transition>
@@ -67,7 +67,6 @@ body,
 		top: 0;
 		left: 0;
 		padding: 15px;
-		padding-bottom: 0px;
 		width: 100%;
 		box-sizing: border-box;
 		display: flex;
@@ -78,6 +77,9 @@ body,
 	.router-view {
 		height: 100%;
 		background: grey;
+		>div {
+			height: 100%;
+		}
 	}
 }
 </style>

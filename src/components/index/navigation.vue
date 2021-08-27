@@ -1,5 +1,5 @@
 <template>
- <div>
+ <div id="navigation">
 	主页导航
 	<!--使用 router-link 组件进行导航 -->
 	<!--通过传递 `to` 来指定链接 -->
@@ -22,5 +22,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang='less'>
-
+	#navigation {
+		z-index: 2;
+	}
 </style>

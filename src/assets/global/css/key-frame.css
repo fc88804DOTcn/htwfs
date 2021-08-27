@@ -1,0 +1,7 @@
+/**
+ * 全局修改animate.css动画效果
+ */
+:root {
+	/* 执行时常为0.2秒 */
+	--animate-duration: 200ms;
+}

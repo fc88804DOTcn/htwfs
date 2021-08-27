@@ -1,6 +1,6 @@
 <template>
- <div id="statistics-panel">
-	统计面板
+ <div id="trend-echarts">
+
  </div>
 </template>
 
@@ -18,12 +18,11 @@ export default defineComponent({
 </script>
 
 <style scoped lang='less'>
-	#statistics-panel {
-		height: 80%;
-		width: 200px;
-		background: bisque;
+	#trend-echarts {
+		width: 100%;
+		height: 300px;
+		background: grey;
 		position: absolute;
 		bottom: 0;
-		right: 0;
 	}
 </style>

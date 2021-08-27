@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div id="map">
 		地图主图
 	</div>
 </template>
@@ -14,4 +14,9 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+	#map {
+		height: 100%;
+		background: ghostwhite;
+	}
+</style>
