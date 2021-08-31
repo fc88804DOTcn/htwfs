@@ -18,7 +18,7 @@
 import Emitter from 'tiny-emitter';
 import { useStore } from 'vuex';
 import { computed, defineComponent, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue';
-import Navigation from './components/index/navigation.vue';
+import Navigation from './components/system/navigation/index.vue';
 export default defineComponent({
 	name: '',
 	props: {},
@@ -63,14 +63,9 @@ body,
 	padding: 0px;
 
 	.navigation {
-		position: absolute;
-		top: 0;
-		left: 0;
-		padding: 4px;
-		width: 100%;
-		box-sizing: border-box;
-		display: flex;
-		justify-content: center;
+		// position: absolute;
+		// top: 0;
+		// left: 0;
 	}
 
 	.router-view {
