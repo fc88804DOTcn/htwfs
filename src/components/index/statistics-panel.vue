@@ -5,7 +5,7 @@
 		enter-active-class="animate__animated animate__slideInRight"
 		leave-active-class="animate__animated animate__slideOutRight"
 	>
-		<div class="content" v-if="panelSwitch.left">
+		<div class="content" v-if="panelSwitch.right">
 			统计面板
 		</div>
 	</transition>

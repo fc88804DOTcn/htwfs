@@ -33,8 +33,11 @@ export default defineComponent({
 	#trend-echarts {
 		width: 100%;
 		height: auto;
-		background: grey;
 		position: absolute;
 		bottom: 0;
+		.content {
+			background: grey;
+			min-height: 300px;
+		}
 	}
 </style>

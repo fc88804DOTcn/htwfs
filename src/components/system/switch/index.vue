@@ -1,34 +1,34 @@
 <template>
 	<div v-if="type === 'top'">
 		<div v-if="status">
-			<i class="iconfont switch top">&#xef88;</i>
+			<i @click="switchClickHandler" class="iconfont switch top">&#xef88;</i>
 		</div>
 		<div v-else>
-			<i class="iconfont switch top">&#xef89;</i>
+			<i @click="switchClickHandler" class="iconfont switch top">&#xef89;</i>
 		</div>
 	</div>
 	<div v-else-if="type === 'right'">
 		<div v-if="status">
-			<i class="iconfont switch right">&#xe6d1;</i>
+			<i @click="switchClickHandler" class="iconfont switch right">&#xe6d1;</i>
 		</div>
 		<div v-else>
-			<i class="iconfont switch right">&#xef8a;</i>
+			<i @click="switchClickHandler" class="iconfont switch right">&#xef8a;</i>
 		</div>
 	</div>
 	<div v-else-if="type === 'bottom'">
 		<div v-if="status">
-			<i class="iconfont switch bottom">&#xef89;</i>
+			<i @click="switchClickHandler" class="iconfont switch bottom">&#xef89;</i>
 		</div>
 		<div v-else>
-			<i class="iconfont switch bottom">&#xef88;</i>
+			<i @click="switchClickHandler" class="iconfont switch bottom">&#xef88;</i>
 		</div>
 	</div>
 	<div v-else-if="type === 'left'">
 		<div v-if="status">
-			<i class="iconfont switch left">&#xef8a;</i>
+			<i @click="switchClickHandler" class="iconfont switch left">&#xef8a;</i>
 		</div>
 		<div v-else>
-			<i class="iconfont switch left">&#xe6d1;</i>
+			<i @click="switchClickHandler" class="iconfont switch left">&#xe6d1;</i>
 		</div>
 	</div>
 </template>
@@ -48,12 +48,21 @@ export default defineComponent({
 	components: {},
 	setup(props, context) {
 		const store = useStore()
-		
+		// 定义当前组件开关状态变量
 		let status = computed(() => store.getters.indexPanelSwitch[props.switchType])
+		
+		// 定义组件点击处理方法
+		const switchClickHandler = function() {
+			// 应当触发开关的按下事件
+			const option = {}
+			option.type = props.switchType
+			store.commit('switchReverseByType',option)
+		}
 		
 		return {
 			type: props.switchType,
 			status,
+			switchClickHandler
 		}
 	}
 });

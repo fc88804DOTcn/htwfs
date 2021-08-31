@@ -5,5 +5,8 @@ export default {
 		for(let item in tempObj){
 			tempObj[item] = !tempObj[item]
 		}
+	},
+	switchReverseByType: (state,option)=>{
+		state.indexPanelSwitch[option.type] = !state.indexPanelSwitch[option.type]
 	}
 }
