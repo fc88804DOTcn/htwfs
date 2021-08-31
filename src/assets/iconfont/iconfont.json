@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "15711148",
+      "name": "系统",
+      "font_class": "xitong",
+      "unicode": "e6cd",
+      "unicode_decimal": 59085
+    },
+    {
       "icon_id": "5633968",
       "name": "copyright",
       "font_class": "copyright1",

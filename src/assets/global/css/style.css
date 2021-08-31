@@ -4,3 +4,17 @@
 .jhbl-index-hover-zindex-10:hover {
 	z-index: 10;
 }
+
+/* 全局设置iconfont字体图标宽高等高 */
+i.iconfont {
+	font-size: 28px;
+	display: block;
+	box-sizing: border-box;
+	line-height: 1;
+}
+
+ul,ol{
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}

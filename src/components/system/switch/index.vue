@@ -70,10 +70,6 @@ export default defineComponent({
 
 <style scoped lang="less">
 	.iconfont.switch {
-		font-size: 28px;
-		display: block;
-	    box-sizing: border-box;
-	    line-height: 1;
 		position: absolute;
 		animation: jhbl-starify 2s infinite linear;
 		transition: all .2s ease-in-out;

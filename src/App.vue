@@ -5,6 +5,8 @@
 	>
 		<Navigation v-if="panelSwitch.top" class="navigation"></Navigation>
 	</transition>
+	
+	
 	<!-- 路由出口 -->
 	<!-- 路由匹配到的组件将渲染在这里 -->
 	<router-view class="router-view" v-slot="{ Component }">

@@ -18,7 +18,27 @@
 		
 		<!-- 系统操作 -->
 		<div class="system-operation">
-			
+			<!-- 针对地图添加的定位操作：仅在首页出现 -->
+			<ul>
+				<li><i class="iconfont sys-btn">&#xe6de;</i></li>
+				<li><i class="iconfont sys-btn">&#xe6dd;</i></li>
+				<li><i class="iconfont sys-btn">&#xec32;</i></li>
+				<li><i class="iconfont sys-btn">&#xe743;</i></li>
+				<li><i class="iconfont sys-btn">&#xe6df;</i></li>
+			</ul>
+			<!-- 一个鼠标移入滑出的系统菜单 -->
+			<li @mouseover="sysBtnMouseOverHander" @mouseout="sysBtnMouseOutHander">
+				<i class="iconfont">&#xe6cd;</i>
+				<transition
+					enter-active-class="animate__animated animate__slideInDown"
+					leave-active-class="animate__animated animate__slideOutUp"
+				>
+					<ul v-if="showSystemBtn">
+						<li><i class="iconfont">&#xe600;</i></li>
+						<li><i class="iconfont">&#xe651;</i></li>
+					</ul>
+				</transition>
+			</li>
 		</div>
 	</div>
 	
@@ -62,7 +82,20 @@ export default defineComponent({
 	props: {},
 	components: {},
 	setup(props, context) {
-
+		let showSystemBtn = ref(false)
+		
+		const sysBtnMouseOverHander = function() {
+			showSystemBtn.value = true
+		}
+		const sysBtnMouseOutHander = function() {
+			showSystemBtn.value = false
+		}
+		
+		return {
+			sysBtnMouseOverHander,
+			sysBtnMouseOutHander,
+			showSystemBtn
+		}
 	
 	},
 })
@@ -84,6 +117,42 @@ export default defineComponent({
 			justify-content: space-between;
 			>div {
 				flex: 1;
+			}
+			.system-operation {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				ul {
+					display: flex;
+					i.iconfont {
+						font-size: 18px;
+						margin: 0 5px;
+						color: #0FF;
+						transition: all 0.2s;
+						&:hover {
+							color: #FFF;
+							cursor: pointer;
+						}
+					}
+				}
+				> li {
+					position: relative;
+					line-height: 1;
+					i.iconfont {
+						color: #8e8e8e;
+						&:hover {
+							cursor: default;
+						}
+					}
+					ul {
+						position: absolute;
+						display: flex;
+						flex-direction: column;
+						li {
+							margin: 4px 0px;
+						}
+					}
+				}
 			}
 		}
 	}
