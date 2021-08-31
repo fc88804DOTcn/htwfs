@@ -5,3 +5,19 @@
 	/* 执行时常为0.2秒 */
 	--animate-duration: 200ms;
 }
+
+/* 地图首页开关闪烁动画 */
+@keyframes jhbl-starify {
+	0% {
+		color: #0FF;
+	}
+
+	50% {
+		color: #515a6e;
+	}
+
+	100% {
+		color: #0FF;
+	}
+
+}

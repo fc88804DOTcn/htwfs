@@ -55,28 +55,32 @@ body,
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
+	background: url(assets/img/bg.jpg);
 }
 
 #app {
 	box-sizing: border-box;
-	padding: 15px;
-	background: gainsboro;
+	padding: 0px;
 
 	.navigation {
 		position: absolute;
 		top: 0;
 		left: 0;
-		padding: 15px;
+		padding: 4px;
 		width: 100%;
 		box-sizing: border-box;
 		display: flex;
 		justify-content: center;
-		background: gainsboro;
 	}
 
 	.router-view {
+		width: 100%;
 		height: 100%;
-		background: grey;
+		box-sizing: border-box;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 4px;
 		>div {
 			height: 100%;
 		}

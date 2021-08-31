@@ -17,6 +17,6 @@ export default defineComponent({
 <style scoped lang="less">
 	#map {
 		height: 100%;
-		background: ghostwhite;
+		background: transparent;
 	}
 </style>

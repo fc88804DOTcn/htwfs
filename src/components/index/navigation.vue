@@ -24,5 +24,6 @@ export default defineComponent({
 <style scoped lang='less'>
 	#navigation {
 		z-index: 2;
+		background: url("../../assets/img/nav-bg.png") repeat-x;
 	}
 </style>

@@ -1,18 +1,30 @@
 <template>
- <div id="trend-echarts">
-
+ <div id="trend-echarts" class="jhbl-index-hover-zindex-10">
+	<slot name="switch"></slot>
+	<transition
+		enter-active-class="animate__animated animate__slideInUp"
+		leave-active-class="animate__animated animate__slideOutDown"
+	>
+		<div class="content" v-if="panelSwitch.bottom">
+			趋势图标
+		</div>
+	</transition>
  </div>
 </template>
 
 <script>
+import { useStore } from 'vuex';
 import { computed, defineComponent, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
 export default defineComponent({
 	name: '',
 	props: {},
 	components: {},
 	setup(props, context) {
-
-	
+		const store = useStore();
+		const panelSwitch = computed(() => store.getters.indexPanelSwitch);
+		return {
+			panelSwitch
+		};
 	},
 })
 </script>
@@ -20,7 +32,7 @@ export default defineComponent({
 <style scoped lang='less'>
 	#trend-echarts {
 		width: 100%;
-		height: 300px;
+		height: auto;
 		background: grey;
 		position: absolute;
 		bottom: 0;

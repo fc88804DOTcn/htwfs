@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "5633968",
+      "name": "copyright",
+      "font_class": "copyright1",
+      "unicode": "ef87",
+      "unicode_decimal": 61319
+    },
+    {
+      "icon_id": "581007",
+      "name": "copyright",
+      "font_class": "copyright",
+      "unicode": "e6ef",
+      "unicode_decimal": 59119
+    },
+    {
       "icon_id": "5091791",
       "name": "冰块",
       "font_class": "tubiao-",
@@ -146,20 +160,6 @@
       "unicode_decimal": 60466
     },
     {
-      "icon_id": "6056162",
-      "name": "收缩箭头",
-      "font_class": "shousuojiantou",
-      "unicode": "e6db",
-      "unicode_decimal": 59099
-    },
-    {
-      "icon_id": "11121488",
-      "name": "收缩",
-      "font_class": "shousuo",
-      "unicode": "e6dc",
-      "unicode_decimal": 59100
-    },
-    {
       "icon_id": "11261668",
       "name": "热力云图",
       "font_class": "reliyuntu",
@@ -244,32 +244,18 @@
       "unicode_decimal": 59092
     },
     {
-      "icon_id": "36564",
-      "name": "展开快退",
-      "font_class": "zhankaikuaitui",
-      "unicode": "e6cd",
-      "unicode_decimal": 59085
+      "icon_id": "23981868",
+      "name": "展开-76",
+      "font_class": "lef-copy",
+      "unicode": "ef8a",
+      "unicode_decimal": 61322
     },
     {
-      "icon_id": "1422727",
-      "name": "展开",
-      "font_class": "zhankai",
-      "unicode": "e6ce",
-      "unicode_decimal": 59086
-    },
-    {
-      "icon_id": "2418277",
-      "name": "展开",
-      "font_class": "zhankai1",
-      "unicode": "e6cf",
-      "unicode_decimal": 59087
-    },
-    {
-      "icon_id": "6941975",
-      "name": "展开",
-      "font_class": "zhankai-",
-      "unicode": "e6d0",
-      "unicode_decimal": 59088
+      "icon_id": "23981762",
+      "name": "展开-76",
+      "font_class": "top-copy",
+      "unicode": "ef88",
+      "unicode_decimal": 61320
     },
     {
       "icon_id": "10116577",
@@ -277,6 +263,13 @@
       "font_class": "zhankai-1",
       "unicode": "e6d1",
       "unicode_decimal": 59089
+    },
+    {
+      "icon_id": "23981814",
+      "name": "展开-76",
+      "font_class": "zhankai-1-copy",
+      "unicode": "ef89",
+      "unicode_decimal": 61321
     },
     {
       "icon_id": "18310444",
