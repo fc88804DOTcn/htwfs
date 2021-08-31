@@ -33,9 +33,12 @@ export default defineComponent({
 	#statistics-panel {
 		height: 80%;
 		width: auto;
-		background: bisque;
 		position: absolute;
 		bottom: 0;
 		right: 0;
+		.content {
+			background: bisque;
+			height: 100%;
+		}
 	}
 </style>

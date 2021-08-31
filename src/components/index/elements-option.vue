@@ -33,9 +33,12 @@ export default defineComponent({
 	#elements-option {
 		height: 80%;
 		width: auto;
-		background: gainsboro;
 		position: absolute;
 		bottom: 0;
 		left: 0;
+		.content {
+			background: gainsboro;
+			height: 100%;
+		}
 	}
 </style>
