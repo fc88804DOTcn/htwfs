@@ -1,1 +1,4 @@
-export default {}
+export default {
+    currentTimeAllStation: null,
+    currentStation: null
+}

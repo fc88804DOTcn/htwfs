@@ -5,7 +5,7 @@
 		enter-active-class="animate__animated animate__slideInRight"
 		leave-active-class="animate__animated animate__slideOutRight"
 	>
-		<div class="content" v-if="panelSwitch.right">
+		<div class="content padding-4" v-if="panelSwitch.right">
 			统计面板
 		</div>
 	</transition>
@@ -34,11 +34,12 @@ export default defineComponent({
 		height: 80%;
 		width: auto;
 		position: absolute;
-		bottom: 0;
+		bottom: 0px;
 		right: 0;
 		.content {
 			background: bisque;
 			height: 100%;
+			box-sizing: border-box;
 		}
 	}
 </style>

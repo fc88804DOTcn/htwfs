@@ -1,11 +1,11 @@
 <template>
- <div id="elements-option">
+ <div id="elements-option" class="jhbl-index-hover-zindex-10">
 	<slot name="switch"></slot>
 	<transition
 		enter-active-class="animate__animated animate__slideInLeft"
 		leave-active-class="animate__animated animate__slideOutLeft"
 	>
-		<div class="content" v-if="panelSwitch.left">
+		<div class="content padding-4" v-if="panelSwitch.left">
 			要素选择要素选择要素选择要素选择
 		</div>
 	</transition>
@@ -34,11 +34,12 @@ export default defineComponent({
 		height: 80%;
 		width: auto;
 		position: absolute;
-		bottom: 0;
+		bottom: 0px;
 		left: 0;
 		.content {
 			background: gainsboro;
 			height: 100%;
+			box-sizing: border-box;
 		}
 	}
 </style>

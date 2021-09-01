@@ -19,5 +19,19 @@
 	100% {
 		color: #0FF;
 	}
+}
 
+/* 地图首页左右面板置顶过渡 */
+@keyframes jhbl-panel-stick {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: .8;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
