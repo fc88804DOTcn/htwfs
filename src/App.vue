@@ -5,7 +5,8 @@
 	>
 		<Navigation v-if="panelSwitch.top" class="navigation"></Navigation>
 	</transition>
-	
+	<!-- {{currentTimeAllStation}} -->
+	<!-- {{currentTimePresentStation}} -->
 	
 	<!-- 路由出口 -->
 	<!-- 路由匹配到的组件将渲染在这里 -->
@@ -18,9 +19,9 @@
 
 <script>
 import eloading from './assets/global/js/eloading'
-import Emitter from 'tiny-emitter';
+import emitter from './assets/global/js/emitter';
 import { useStore } from 'vuex';
-import { computed, defineComponent, onBeforeUnmount, onMounted, onBeforeMount, reactive, ref, watch } from 'vue';
+import { computed, defineComponent, onBeforeUnmount, onMounted, onBeforeMount, reactive, ref, watch, provide } from 'vue';
 import Navigation from './components/system/navigation/index.vue';
 export default defineComponent({
 	name: '',
@@ -28,15 +29,28 @@ export default defineComponent({
 	components: { Navigation },
 	setup(props, context) {
 		const store = useStore();
+		// 定义必要的计算属性
+		// 定义计算属性获取首页控制面板开关
 		const panelSwitch = computed(() => store.getters.indexPanelSwitch);
-		// 全局事件处理
-		const emitter = new Emitter();
+		// 定义计算属性获取当前时刻的所有站点数据并在根组件中提供
+		const currentTimeAllStation = computed(() => store.getters.currentTimeAllStation);
+		provide('currentTimeAllStation',currentTimeAllStation)
+		// 定义计算属性获取当前时刻的选中站点数据并在根组件中提供
+		const currentTimePresentStation = computed(() => store.getters.currentTimePresentStation);
+		provide('currentTimePresentStation',currentTimePresentStation)
+
+
 		// 应用挂载前初始化数据
 		onBeforeMount(()=>{
 			store.dispatch('initCurrentTimeAllStation')
 			store.dispatch('initCurrentTimeHeatMapData')
 			store.dispatch('initCurrentTimeAlarmData')
 		})
+
+		// 当全部站点数据过去成功后，初始化当前时刻选中的站点
+		watch(currentTimeAllStation,()=>{
+			store.commit('initCurrentTimePresentStation')
+		});
 
 		
 		onMounted(() => {
@@ -49,6 +63,7 @@ export default defineComponent({
 			});
 			// 监听上面配置的键盘E键触发的事件
 			emitter.on('indexPanelSwitchReverse', () => {
+				console.log("indexPanelSwitchReverse trigger")
 				store.commit('indexPanelSwitchReverse');
 			});
 
@@ -56,7 +71,9 @@ export default defineComponent({
 		});
 
 		return {
-			panelSwitch
+			panelSwitch,
+			currentTimeAllStation,
+			currentTimePresentStation
 		};
 	}
 });

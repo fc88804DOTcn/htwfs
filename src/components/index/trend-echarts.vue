@@ -1,5 +1,5 @@
 <template>
- <div id="trend-echarts" class="jhbl-index-hover-zindex-10">
+ <div id="trend-echarts">
 	<slot name="switch"></slot>
 	<transition
 		enter-active-class="animate__animated animate__slideInUp"
@@ -7,7 +7,7 @@
 	>
 		<el-scrollbar>
 			<div class="content padding-4" v-if="panelSwitch.bottom">
-				趋势图标
+				趋势图表
 			</div>
 		</el-scrollbar>
 	</transition>

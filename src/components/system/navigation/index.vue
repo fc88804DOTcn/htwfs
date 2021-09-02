@@ -48,7 +48,7 @@
 	
 	<div class="row">
 		<!-- 要素 -->
-		<div class="logo-timer">
+		<div class="">
 			
 		</div>
 		
@@ -108,7 +108,7 @@ export default defineComponent({
 		left: 0;
 		width: 100%;
 		z-index: 2;
-		background: url("../../../assets/img/nav-bg.png") repeat-x;
+		background: url("../../../assets/img/nav-bg.png") repeat;
 		padding: 4px;
 		box-sizing: border-box;
 		.row {
@@ -117,6 +117,8 @@ export default defineComponent({
 			justify-content: space-between;
 			>div {
 				flex: 1;
+				display: flex;
+				box-sizing: border-box;
 			}
 			.system-operation {
 				display: flex;
@@ -152,6 +154,12 @@ export default defineComponent({
 							margin: 4px 0px;
 						}
 					}
+				}
+			}
+			.logo-timer {
+				padding: 15px 0px;
+				> img {
+					width: 8%;
 				}
 			}
 		}

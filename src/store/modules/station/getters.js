@@ -3,8 +3,8 @@ export default {
     currentTimeAllStation: (state, getters, rootState) => {
 		return state.currentTimeAllStation
     },
-    // 获取当前站点信息
-    currentStation: (state, getters, rootState) => {
-		return state.currentStation
+    // 获取当前站点信息:当前时刻
+    currentTimePresentStation: (state, getters, rootState) => {
+		return state.currentTimePresentStation
 	}
 }

@@ -1,6 +1,12 @@
 import {
 	createApp
 } from 'vue'
+
+// 饿了么UI
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import zhCn from 'element-plus/es/locale/lang/zh-cn'
+
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -11,10 +17,7 @@ import 'normalize.css/normalize.css'
 // 导入flexible适配
 import 'amfe-flexible/index.js'
 
-// 饿了么UI
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
-import zhCn from 'element-plus/es/locale/lang/zh-cn'
+
 const app = createApp(App)
 app.use(ElementPlus, {
 	size: 'small',

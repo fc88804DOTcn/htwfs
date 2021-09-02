@@ -1,4 +1,4 @@
 export default {
     currentTimeAllStation: null,
-    currentStation: null
+    currentTimePresentStation: null
 }
