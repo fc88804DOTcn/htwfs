@@ -17,9 +17,10 @@
 </template>
 
 <script>
+import eloading from './assets/global/js/eloading'
 import Emitter from 'tiny-emitter';
 import { useStore } from 'vuex';
-import { computed, defineComponent, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue';
+import { computed, defineComponent, onBeforeUnmount, onMounted, onBeforeMount, reactive, ref, watch } from 'vue';
 import Navigation from './components/system/navigation/index.vue';
 export default defineComponent({
 	name: '',
@@ -28,19 +29,30 @@ export default defineComponent({
 	setup(props, context) {
 		const store = useStore();
 		const panelSwitch = computed(() => store.getters.indexPanelSwitch);
-
 		// 全局事件处理
 		const emitter = new Emitter();
+		// 应用挂载前初始化数据
+		onBeforeMount(()=>{
+			store.dispatch('initCurrentTimeAllStation')
+			store.dispatch('initCurrentTimeHeatMapData')
+			store.dispatch('initCurrentTimeAlarmData')
+		})
+
+		
 		onMounted(() => {
+			// console.log("根组件挂载")
 			document.addEventListener('keydown', () => {
 				if (event.keyCode === 69) {
 					// 此处应触发控制器开关取反事件
 					emitter.emit('indexPanelSwitchReverse');
 				}
 			});
+			// 监听上面配置的键盘E键触发的事件
 			emitter.on('indexPanelSwitchReverse', () => {
 				store.commit('indexPanelSwitchReverse');
 			});
+
+			eloading.stop()
 		});
 
 		return {

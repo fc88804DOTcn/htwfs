@@ -3,18 +3,26 @@
  */
 .jhbl-index-hover-zindex-10:hover {
 	z-index: 10;
+	animation: jhbl-panel-stick .35s linear;
 }
-
-/* 全局设置iconfont字体图标宽高等高 */
-i.iconfont {
-	font-size: 28px;
-	display: block;
-	box-sizing: border-box;
-	line-height: 1;
+.padding-4 {
+	padding: 4px;
 }
-
-ul,ol{
-	list-style: none;
-	margin: 0px;
-	padding: 0px;
+.padding-5 {
+	padding: 5px;
+}
+.padding-6 {
+	padding: 6px;
+}
+.padding-7 {
+	padding: 7px;
+}
+.padding-8 {
+	padding: 8px;
+}
+.padding-9 {
+	padding: 9px;
+}
+.padding-10 {
+	padding: 10px;
 }

@@ -5,9 +5,11 @@
 		enter-active-class="animate__animated animate__slideInUp"
 		leave-active-class="animate__animated animate__slideOutDown"
 	>
-		<div class="content" v-if="panelSwitch.bottom">
-			趋势图标
-		</div>
+		<el-scrollbar>
+			<div class="content padding-4" v-if="panelSwitch.bottom">
+				趋势图标
+			</div>
+		</el-scrollbar>
 	</transition>
  </div>
 </template>
