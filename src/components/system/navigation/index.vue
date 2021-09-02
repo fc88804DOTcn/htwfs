@@ -27,7 +27,7 @@
 				<li><i class="iconfont sys-btn">&#xe6df;</i></li>
 			</ul>
 			<!-- 一个鼠标移入滑出的系统菜单 -->
-			<li @mouseover="sysBtnMouseOverHander" @mouseout="sysBtnMouseOutHander">
+			<li @mouseenter="sysBtnMouseOverHander" @mouseleave="sysBtnMouseOutHander">
 				<i class="iconfont">&#xe6cd;</i>
 				<transition
 					enter-active-class="animate__animated animate__slideInDown"
