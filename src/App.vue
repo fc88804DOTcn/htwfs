@@ -55,15 +55,14 @@ export default defineComponent({
 		
 		onMounted(() => {
 			// console.log("根组件挂载")
-			document.addEventListener('keydown', () => {
-				if (event.keyCode === 69) {
+			document.addEventListener('keydown', ($event) => {
+				if ($event.keyCode === 69) {
 					// 此处应触发控制器开关取反事件
 					emitter.emit('indexPanelSwitchReverse');
 				}
 			});
 			// 监听上面配置的键盘E键触发的事件
 			emitter.on('indexPanelSwitchReverse', () => {
-				console.log("indexPanelSwitchReverse trigger")
 				store.commit('indexPanelSwitchReverse');
 			});
 
@@ -86,12 +85,14 @@ body,
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	background: url(assets/img/bg.jpg);
+	// background: url(assets/img/bg.jpg);
+	background: #012a62;
 }
 
 #app {
 	box-sizing: border-box;
 	padding: 0px;
+	color: white;
 
 	.navigation {
 		// position: absolute;

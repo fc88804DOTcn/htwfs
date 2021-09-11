@@ -100,6 +100,11 @@ export default (element) => {
             label: '湿滑系数',
             iconcode: '&#xe653;'
         },
+        {
+            type: 'visibility',
+            label: '能见度',
+            iconcode: '&#xed96;'
+        },
     ]
   return list.filter(item=>{
       return item.type===element
